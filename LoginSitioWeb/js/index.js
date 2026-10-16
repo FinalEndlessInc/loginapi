@@ -14,6 +14,7 @@ function HacerLogin(){
     }).then(recurso => {
         if(recurso.status == 200){
             recurso.json().then(respuesta => {
+                localStorage.setItem("token_sesion", respuesta.token_acceso);
                 window.location.href = "cuenta.html";
             });
         }
